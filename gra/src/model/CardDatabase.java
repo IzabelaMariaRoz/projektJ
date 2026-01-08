@@ -411,20 +411,14 @@ public class CardDatabase {
 
 
     }
-}
-    /**
-     * Główna metoda fabryczna.
 
     public static ShipCard createCard(Faction faction, ShipType type, Rarity rarity) {
-        String name = "Nieznany Statek";
-        int hp = 10;
-        int atk = 2;
-        int cost = 3;
-
-        // TODO: Tutaj będzie wielki Switch/Map z nazwami statków z pliku
-        // Na razie placeholder:
-        name = faction.getNazwa() + " " + type.getNazwa() + " (" + rarity.getNazwa() + ")";
-
-        return new ShipCard(name, faction, type, rarity, hp, atk, cost);
+        String key = faction.name() + "_" + type.name() + "_" + rarity.name();
+        ShipCard card = cards.get(key);
+        if (card == null) {
+            // jeśli nie ma w bazie — placeholder
+            return new ShipCard("Nieznany", faction, type, rarity, 10, 2, 3);
+        }
+        return card;
     }
 }

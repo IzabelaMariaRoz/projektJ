@@ -1,6 +1,6 @@
-Dokumentacja Projektowa: Przebieggryw BATTLESHIPS
+Dokumentacja Projektowa: Przebieg gry w BATTLESHIPS
 1. Przegląd Projektu
-Przebieggryw BATTLESHIPS to implementacja strategicznej gry turowej w języku Java (SE 21), łącząca mechanikę gier planszowych z elementami karcianymi (Deck Building). Aplikacja symuluje potyczki morskie na macierzy 6x6, wykorzystując zróżnicowane frakcje, typy jednostek oraz system zarządzania zasobami (ekonomia kredytów).
+Przebieg gry w BATTLESHIPS to implementacja strategicznej gry turowej w języku Java (SE 21), łącząca mechanikę gier planszowych z elementami karcianymi (Deck Building). Aplikacja symuluje potyczki morskie na macierzy 6x6, wykorzystując zróżnicowane frakcje, typy jednostek oraz system zarządzania zasobami (ekonomia kredytów).
 
 Projekt realizowany jest w oparciu o wzorzec architektoniczny MVC (Model-View-Controller), z wykorzystaniem biblioteki Swing do obsługi interfejsu graficznego użytkownika.
 

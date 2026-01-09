@@ -25,10 +25,10 @@ public class DraftSystem {
         ));
 
         // Wyjątek dla ZSRR: 
-        if (faction == Faction.ZSR) {
-            types.add(ShipType.BATTLESHIP); // Dodatkowy Pancernik
+        if (faction == Faction.ZSRR) {
+            types.add(ShipType.BATTLESHIPS); // Dodatkowy Pancernik
         } else {
-            types.add(ShipType.AIRCRAFT_CARRIER); // Standardowy Lotniskowiec
+            types.add(ShipType.AIRCRAFT-CARRIERS); // Standardowy Lotniskowiec
         }
         
         // Przykład użycia bazy:

@@ -26,9 +26,16 @@ public class GameWindow extends JFrame {
     }
 
     private void initUI() {
-        // TODO: Podział okna na strefę gracza i przeciwnika
+        // Podział okna na strefę gracza i przeciwnika
         playerBoardPanel = new BoardPanel();
+        enemyBoardPanel = new BoardPanel();
+
+        // Plansza przeciwnika u góry
+        add(enemyBoardPanel, BorderLayout.NORTH);
         add(playerBoardPanel, BorderLayout.CENTER);
+        
+        // Plansza przeciwnika na dole
+        add(playerBoardPanel, BorderLayout.SOUTH);
         
         // TODO: Dodanie panelu ręki, panelu info itp.
     }

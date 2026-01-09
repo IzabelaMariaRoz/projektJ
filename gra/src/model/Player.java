@@ -23,12 +23,12 @@ public class Player {
         this.board = new Board();
     }
 
-    // TODO: Dodawanie kredytów co turę
+    // Dodawanie kredytów co turę
     public void addCredits(int amount) {
         this.credits += amount;
     }
 
-    // TODO: Dobieranie karty z talii do ręki
+    // Dobieranie karty z talii do ręki
     public void drawCard() {
         if (!deck.isEmpty()) {
             hand.add(deck.remove(0));

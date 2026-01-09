@@ -18,14 +18,24 @@ public class GameManager {
         this.currentTurn = 1;
     }
 
-    // TODO: Metoda przejścia do następnej tury
+    // Metoda przejścia do następnej tury
     public void nextTurn() {
         currentTurn++;
+
+        player1.addCredits(1);
+        player2.addCredits(1);
         // Logika przyznawania kredytów, dobierania kart itp.
     }
 
-    // TODO: Sprawdzenie, czy gra się skończyła
+    // Sprawdzenie, czy gra się skończyła
     public boolean checkWinCondition() {
+
+        boolean player1HasShips = false;
+        boolean player2HasShips = false;
+
+        Board board1 = player1.getBoard();
+        Board board2 = player2.getBoard();
+
         return false;
-    }
+    }    
 }

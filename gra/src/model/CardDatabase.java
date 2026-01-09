@@ -1,5 +1,8 @@
 package model;
 
+
+import java.util.HashMap;
+import java.util.Map;
 import model.enums.Faction;
 import model.enums.Rarity;
 import model.enums.ShipType;
@@ -419,6 +422,14 @@ public class CardDatabase {
             // jeśli nie ma w bazie — placeholder
             return new ShipCard("Nieznany", faction, type, rarity, 10, 2, 3);
         }
-        return card;
+        return new ShipCard(
+                template.getName(),
+                template.getFaction(),
+                template.getType(),
+                template.getRarity(),
+                template.getHp(),
+                template.getAttack(),
+                3
+        );
     }
 }

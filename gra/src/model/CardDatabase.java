@@ -15,389 +15,389 @@ public class CardDatabase {
     static{
         /**ShipCard */
         cards.put("GERMANY_BATTLESHIPS",
-                new ShipCard("Schleswig-Holstein"), Fraction.GERMANY, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
+                new ShipCard("Schleswig-Holstein"), Faction.GERMANY, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
 
         cards.put("GERMANY_BATTLESHIPS",
-                new ShipCard("Gneisenau"), Fraction.GERMANY, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
+                new ShipCard("Gneisenau"), Faction.GERMANY, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
 
         cards.put("GERMANY_BATTLESHIPS",
-                new ShipCard("Bismarck"), Fraction.GERMANY, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
+                new ShipCard("Bismarck"), Faction.GERMANY, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
 
         cards.put("GERMANY_BATTLESHIPS",
-                new ShipCard("Lützow"), Fraction.GERMANY, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
+                new ShipCard("Lützow"), Faction.GERMANY, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
 
         cards.put("GERMANY_BATTLESHIPS",
-                new ShipCard("Tirpitz"), Fraction.GERMANY, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
+                new ShipCard("Tirpitz"), Faction.GERMANY, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
 
         cards.put("GERMANY_BATTLESHIPS",
-                new ShipCard("Lützow"), Fraction.GERMANY, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
+                new ShipCard("Lützow"), Faction.GERMANY, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
 
         cards.put("GERMANY_BATTLESHIPS",
-                new ShipCard("Scharnhorst"), Fraction.GERMANY, ShipType.BATTLESHIPS, Rarity.LEGENDARY, ));
+                new ShipCard("Scharnhorst"), Faction.GERMANY, ShipType.BATTLESHIPS, Rarity.LEGENDARY, ));
 
 
 
         cards.put("GERMANY_AIRCRAFT-CARRIER",
-                new ShipCard("Waser"), Fraction.GERMANY, ShipType.AIRCRAFT_CARRIER, Rarity.STANDARD, ));
+                new ShipCard("Waser"), Faction.GERMANY, ShipType.AIRCRAFT_CARRIER, Rarity.STANDARD, ));
 
         cards.put("GERMANY_AIRCRAFT-CARRIER",
-                new ShipCard("Elbe"), Fraction.GERMANY, ShipType.AIRCRAFT_CARRIER, Rarity.STANDARD, ));
+                new ShipCard("Elbe"), Faction.GERMANY, ShipType.AIRCRAFT_CARRIER, Rarity.STANDARD, ));
 
         cards.put("GERMANY_AIRCRAFT-CARRIER",
-                new ShipCard("Graf Zeppelin"), Fraction.GERMANY, ShipType.AIRCRAFT_CARRIER, Rarity.STANDARD, ));
+                new ShipCard("Graf Zeppelin"), Faction.GERMANY, ShipType.AIRCRAFT_CARRIER, Rarity.STANDARD, ));
 
         cards.put("GERMANY_AIRCRAFT-CARRIER",
-                new ShipCard("Jade"), Fraction.GERMANY, ShipType.AIRCRAFT_CARRIER, Rarity.UNIQUE, ));
+                new ShipCard("Jade"), Faction.GERMANY, ShipType.AIRCRAFT_CARRIER, Rarity.UNIQUE, ));
 
         cards.put("GERMANY_AIRCRAFT-CARRIER",
-                new ShipCard("Friesenland"), Fraction.GERMANY, ShipType.AIRCRAFT_CARRIER, Rarity.UNIQUE, ));
+                new ShipCard("Friesenland"), Faction.GERMANY, ShipType.AIRCRAFT_CARRIER, Rarity.UNIQUE, ));
 
         cards.put("GERMANY_AIRCRAFT-CARRIER",
-                new ShipCard("Graf Zeppelin(Premium)"), Fraction.GERMANY, ShipType.AIRCRAFT_CARRIER, Rarity.LEGENDARY, ));
+                new ShipCard("Graf Zeppelin(Premium)"), Faction.GERMANY, ShipType.AIRCRAFT_CARRIER, Rarity.LEGENDARY, ));
 
 
 
         cards.put("GERMANY_CUISERS",
-                new ShipCard("Leipzig"), Fraction.GERMANY, ShipType.CUISERS, Rarity.STANDARD, ));
+                new ShipCard("Leipzig"), Faction.GERMANY, ShipType.CUISERS, Rarity.STANDARD, ));
 
         cards.put("GERMANY_CUISERS",
-                new ShipCard("Nürnberg"), Fraction.GERMANY, ShipType.CUISERS, Rarity.STANDARD, ));
+                new ShipCard("Nürnberg"), Faction.GERMANY, ShipType.CUISERS, Rarity.STANDARD, ));
 
         cards.put("GERMANY_CUISERS",
-                new ShipCard("Admiral Hipper"), Fraction.GERMANY, ShipType.CUISERS, Rarity.STANDARD, ));
+                new ShipCard("Admiral Hipper"), Faction.GERMANY, ShipType.CUISERS, Rarity.STANDARD, ));
 
         cards.put("GERMANY_CUISERS",
-                new ShipCard("Prinz Eugen"), Fraction.GERMANY, ShipType.CUISERS, Rarity.UNIQUE, ));
+                new ShipCard("Prinz Eugen"), Faction.GERMANY, ShipType.CUISERS, Rarity.UNIQUE, ));
 
         cards.put("GERMANY_CUISERS",
-                new ShipCard("Blücher"), Fraction.GERMANY, ShipType.CUISERS, Rarity.UNIQUE, ));
+                new ShipCard("Blücher"), Faction.GERMANY, ShipType.CUISERS, Rarity.UNIQUE, ));
 
         cards.put("GERMANY_CUISERS",
-                new ShipCard("Admiral Scheer"), Fraction.GERMANY, ShipType.CUISERS, Rarity.LENGENDARY, ));
+                new ShipCard("Admiral Scheer"), Faction.GERMANY, ShipType.CUISERS, Rarity.LENGENDARY, ));
 
 
 
         cards.put("GERMANY_DESTROYERS",
-                new ShipCard("Z1 Leberecht Maass"), Fraction.GERMANY, ShipType.DESTROYERS, Rarity.STANDARD, ));
+                new ShipCard("Z1 Leberecht Maass"), Faction.GERMANY, ShipType.DESTROYERS, Rarity.STANDARD, ));
 
         cards.put("GERMANY_DESTROYERS",
-                new ShipCard("Z30"), Fraction.GERMANY, ShipType.DESTROYERS, Rarity.STANDARD, ));
+                new ShipCard("Z30"), Faction.GERMANY, ShipType.DESTROYERS, Rarity.STANDARD, ));
 
         cards.put("GERMANY_DESTROYERS",
-                new ShipCard("Z23"), Fraction.GERMANY, ShipType.DESTROYERS, Rarity.STANDARD, ));
+                new ShipCard("Z23"), Faction.GERMANY, ShipType.DESTROYERS, Rarity.STANDARD, ));
 
         cards.put("GERMANY_DESTROYERS",
-                new ShipCard("Z17 Diether von Roeder"), Fraction.GERMANY, ShipType.DESTROYERS, Rarity.UNIQUE, ));
+                new ShipCard("Z17 Diether von Roeder"), Faction.GERMANY, ShipType.DESTROYERS, Rarity.UNIQUE, ));
 
         cards.put("GERMANY_DESTROYERS",
-                new ShipCard("Z38"), Fraction.GERMANY, ShipType.DESTROYERS, Rarity.UNIQUE, ));
+                new ShipCard("Z38"), Faction.GERMANY, ShipType.DESTROYERS, Rarity.UNIQUE, ));
 
         cards.put("GERMANY_DESTROYERS",
-                new ShipCard("Z39"), Fraction.GERMANY, ShipType.DESTROYERS, Rarity.LEGENDARY, ));
+                new ShipCard("Z39"), Faction.GERMANY, ShipType.DESTROYERS, Rarity.LEGENDARY, ));
 
 
 
         cards.put("GERMANY_SUBMARINES",
-                new ShipCard("U-47"), Fraction.GERMANY, ShipType.SUBMARINES, Rarity.STANDARD, ));
+                new ShipCard("U-47"), Faction.GERMANY, ShipType.SUBMARINES, Rarity.STANDARD, ));
 
         cards.put("GERMANY_SUBMARINES",
-                new ShipCard("U-96"), Fraction.GERMANY, ShipType.SUBMARINES, Rarity.STANDARD, ));
+                new ShipCard("U-96"), Faction.GERMANY, ShipType.SUBMARINES, Rarity.STANDARD, ));
 
         cards.put("GERMANY_SUBMARINES",
-                new ShipCard("U-99"), Fraction.GERMANY, ShipType.SUBMARINES, Rarity.STANDARD, ));
+                new ShipCard("U-99"), Faction.GERMANY, ShipType.SUBMARINES, Rarity.STANDARD, ));
 
         cards.put("GERMANY_SUBMARINES",
-                new ShipCard("Typ IX"), Fraction.GERMANY, ShipType.SUBMARINES, Rarity.UNIQUE, ));
+                new ShipCard("Typ IX"), Faction.GERMANY, ShipType.SUBMARINES, Rarity.UNIQUE, ));
 
         cards.put("GERMANY_SUBMARINES",
-                new ShipCard("Typ VII"), Fraction.GERMANY, ShipType.SUBMARINES, Rarity.UNIQUE, ));
+                new ShipCard("Typ VII"), Faction.GERMANY, ShipType.SUBMARINES, Rarity.UNIQUE, ));
 
         cards.put("GERMANY_SUBMARINES",
-                new ShipCard("Typ XXI"), Fraction.GERMANY, ShipType.SUBMARINES, Rarity.LEGENDARY, ));
+                new ShipCard("Typ XXI"), Faction.GERMANY, ShipType.SUBMARINES, Rarity.LEGENDARY, ));
 
 
 
         cards.put("USA_BATTLESHIPS",
-                new ShipCard("USS Arizona"), Fraction.USA, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
+                new ShipCard("USS Arizona"), Faction.USA, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
 
         cards.put("USA_BATTLESHIPS",
-                new ShipCard("USS Iowa"), Fraction.USA, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
+                new ShipCard("USS Iowa"), Faction.USA, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
 
         cards.put("USA_BATTLESHIPS",
-                new ShipCard("USS Missouri"), Fraction.USA, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
+                new ShipCard("USS Missouri"), Faction.USA, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
 
         cards.put("USA_BATTLESHIPS",
-                new ShipCard("USS Texas"), Fraction.USA, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
+                new ShipCard("USS Texas"), Faction.USA, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
 
         cards.put("USA_BATTLESHIPS",
-                new ShipCard("USS Washington"), Fraction.USA, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
+                new ShipCard("USS Washington"), Faction.USA, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
 
         cards.put("USA_BATTLESHIPS",
-                new ShipCard("USS South Dakota"), Fraction.USA, ShipType.BATTLESHIPS, Rarity.LEGENDARY, ));
+                new ShipCard("USS South Dakota"), Faction.USA, ShipType.BATTLESHIPS, Rarity.LEGENDARY, ));
 
 
 
         cards.put("USA_AIRCRAFT-CARRIERS",
-                new ShipCard("USS Hornet"), Fraction.USA, ShipType.AIRCRAFT-CARRIERS, Rarity.STANDARD, ));
+                new ShipCard("USS Hornet"), Faction.USA, ShipType.AIRCRAFT-CARRIERS, Rarity.STANDARD, ));
 
         cards.put("USA_AIRCRAFT-CARRIERS",
-                new ShipCard("USS Yorktown"), Fraction.USA, ShipType.AIRCRAFT-CARRIERS, Rarity.STANDARD, ));
+                new ShipCard("USS Yorktown"), Faction.USA, ShipType.AIRCRAFT-CARRIERS, Rarity.STANDARD, ));
 
         cards.put("USA_AIRCRAFT-CARRIERS",
-                new ShipCard("USS Enterprise"), Fraction.USA, ShipType.AIRCRAFT-CARRIERS, Rarity.STANDARD, ));
+                new ShipCard("USS Enterprise"), Faction.USA, ShipType.AIRCRAFT-CARRIERS, Rarity.STANDARD, ));
 
         cards.put("USA_AIRCRAFT-CARRIERS",
-                new ShipCard("USS Langley"), Fraction.USA, ShipType.AIRCRAFT-CARRIERS, Rarity.UNIQUE, ));
+                new ShipCard("USS Langley"), Faction.USA, ShipType.AIRCRAFT-CARRIERS, Rarity.UNIQUE, ));
 
         cards.put("USA_AIRCRAFT-CARRIERS",
-                new ShipCard("USS Saratoga"), Fraction.USA, ShipType.AIRCRAFT-CARRIERS, Rarity.UNIQUE, ));
+                new ShipCard("USS Saratoga"), Faction.USA, ShipType.AIRCRAFT-CARRIERS, Rarity.UNIQUE, ));
 
         cards.put("USA_AIRCRAFT-CARRIERS",
-                new ShipCard("USS Essex"), Fraction.USA, ShipType.AIRCRAFT-CARRIERS, Rarity.LEGENDARY, ));
+                new ShipCard("USS Essex"), Faction.USA, ShipType.AIRCRAFT-CARRIERS, Rarity.LEGENDARY, ));
 
 
 
         cards.put("USA_CRUISERS",
-                new ShipCard("USS Helena"), Fraction.USA, ShipType.CRUISERS, Rarity.STANDARD, ));
+                new ShipCard("USS Helena"), Faction.USA, ShipType.CRUISERS, Rarity.STANDARD, ));
 
         cards.put("USA_CRUISERS",
-                new ShipCard("USS San Francisco"), Fraction.USA, ShipType.CRUISERS, Rarity.STANDARD, ));
+                new ShipCard("USS San Francisco"), Faction.USA, ShipType.CRUISERS, Rarity.STANDARD, ));
 
         cards.put("USA_CRUISERS",
-                new ShipCard("USS Indianapolis"), Fraction.USA, ShipType.CRUISERS, Rarity.STANDARD, ));
+                new ShipCard("USS Indianapolis"), Faction.USA, ShipType.CRUISERS, Rarity.STANDARD, ));
 
         cards.put("USA_CRUISERS",
-                new ShipCard("USS Baltimore"), Fraction.USA, ShipType.CRUISERS, Rarity.UNIQUE, ));
+                new ShipCard("USS Baltimore"), Faction.USA, ShipType.CRUISERS, Rarity.UNIQUE, ));
 
         cards.put("USA_CRUISERS",
-                new ShipCard("USS Atlanta"), Fraction.USA, ShipType.CRUISERS, Rarity.UNIQUE, ));
+                new ShipCard("USS Atlanta"), Faction.USA, ShipType.CRUISERS, Rarity.UNIQUE, ));
 
         cards.put("USA_CRUISERS",
-                new ShipCard("USS Alaska"), Fraction.USA, ShipType.CRUISERS, Rarity.LEGENDARY, ));
+                new ShipCard("USS Alaska"), Faction.USA, ShipType.CRUISERS, Rarity.LEGENDARY, ));
 
 
 
         cards.put("USA_DESTROYERS",
-                new ShipCard("USS Johnston"), Fraction.USA, ShipType.DESTROYERS, Rarity.STANDARD, ));
+                new ShipCard("USS Johnston"), Faction.USA, ShipType.DESTROYERS, Rarity.STANDARD, ));
 
         cards.put("USA_DESTROYERS",
-                new ShipCard("USS Laffey"), Fraction.USA, ShipType.DESTROYERS, Rarity.STANDARD, ));
+                new ShipCard("USS Laffey"), Faction.USA, ShipType.DESTROYERS, Rarity.STANDARD, ));
 
         cards.put("USA_DESTROYERS",
-                new ShipCard("USS Fletcher"), Fraction.USA, ShipType.DESTROYERS, Rarity.STANDARD, ));
+                new ShipCard("USS Fletcher"), Faction.USA, ShipType.DESTROYERS, Rarity.STANDARD, ));
 
         cards.put("USA_DESTROYERS",
-                new ShipCard("USS Porter"), Fraction.USA, ShipType.DESTROYERS, Rarity.UNIQUE, ));
+                new ShipCard("USS Porter"), Faction.USA, ShipType.DESTROYERS, Rarity.UNIQUE, ));
 
         cards.put("USA_DESTROYERS",
-                new ShipCard("USS Kidd"), Fraction.USA, ShipType.DESTROYERS, Rarity.UNIQUE, ));
+                new ShipCard("USS Kidd"), Faction.USA, ShipType.DESTROYERS, Rarity.UNIQUE, ));
 
         cards.put("USA_DESTROYERS",
-                new ShipCard("USS O'Bannon"), Fraction.USA, ShipType.DESTROYERS, Rarity.LEGENDARY, ));
+                new ShipCard("USS O'Bannon"), Faction.USA, ShipType.DESTROYERS, Rarity.LEGENDARY, ));
 
 
 
         cards.put("USA_SUBMARINES",
-                new ShipCard("USS Trigger"), Fraction.USA, ShipType.SUBMARINES, Rarity.STANDARD, ));
+                new ShipCard("USS Trigger"), Faction.USA, ShipType.SUBMARINES, Rarity.STANDARD, ));
 
         cards.put("USA_DESTROYERS",
-                new ShipCard(" USS Wahoo"), Fraction.USA, ShipType.SUBMARINES, Rarity.STANDARD, ));
+                new ShipCard(" USS Wahoo"), Faction.USA, ShipType.SUBMARINES, Rarity.STANDARD, ));
 
         cards.put("USA_DESTROYERS",
-                new ShipCard("USS Tang"), Fraction.USA, ShipType.SUBMARINES, Rarity.STANDARD, ));
+                new ShipCard("USS Tang"), Faction.USA, ShipType.SUBMARINES, Rarity.STANDARD, ));
 
         cards.put("USA_DESTROYERS",
-                new ShipCard("USS Nautilus"), Fraction.USA, ShipType.SUBMARINES, Rarity.UNIQUE, ));
+                new ShipCard("USS Nautilus"), Faction.USA, ShipType.SUBMARINES, Rarity.UNIQUE, ));
 
         cards.put("USA_DESTROYERS",
-                new ShipCard("USS Gato"), Fraction.USA, ShipType.SUBMARINES, Rarity.UNIQUE, ));
+                new ShipCard("USS Gato"), Faction.USA, ShipType.SUBMARINES, Rarity.UNIQUE, ));
 
         cards.put("USA_DESTROYERS",
-                new ShipCard("USS Barb"), Fraction.USA, ShipType.SUBMARINES, Rarity.LEGENDARY, ));
+                new ShipCard("USS Barb"), Faction.USA, ShipType.SUBMARINES, Rarity.LEGENDARY, ));
 
 
 
 
 
         cards.put("JAPAN_BATTLESHIPS",
-                new ShipCard("Fusō"), Fraction.JAPAN, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
+                new ShipCard("Fusō"), Faction.JAPAN, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
 
         cards.put("JAPAN_BATTLESHIPS",
-                new ShipCard("Nagato"), Fraction.JAPAN, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
+                new ShipCard("Nagato"), Faction.JAPAN, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
 
         cards.put("JAPAN_BATTLESHIPS",
-                new ShipCard("Yamato"), Fraction.JAPAN, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
+                new ShipCard("Yamato"), Faction.JAPAN, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
 
         cards.put("JAPAN_BATTLESHIPS",
-                new ShipCard("Ise"), Fraction.JAPAN, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
+                new ShipCard("Ise"), Faction.JAPAN, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
 
         cards.put("JAPAN_BATTLESHIPS",
-                new ShipCard("Mutsu"), Fraction.JAPAN, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
+                new ShipCard("Mutsu"), Faction.JAPAN, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
 
         cards.put("JAPAN_BATTLESHIPS",
-                new ShipCard("Musashi"), Fraction.JAPAN, ShipType.BATTLESHIPS, Rarity.LEGENDARY, ));
+                new ShipCard("Musashi"), Faction.JAPAN, ShipType.BATTLESHIPS, Rarity.LEGENDARY, ));
 
 
 
         cards.put("JAPAN_AIRCRAFT-CARRIERS",
-                new ShipCard("Shōkaku"), Fraction.JAPAN, ShipType.AIRCRAFT-CARRIERS, Rarity.STANDARD, ));
+                new ShipCard("Shōkaku"), Faction.JAPAN, ShipType.AIRCRAFT-CARRIERS, Rarity.STANDARD, ));
 
         cards.put("JAPAN_AIRCRAFT-CARRIERS",
-                new ShipCard("Kaga"), Fraction.JAPAN, ShipType.AIRCRAFT-CARRIERS, Rarity.STANDARD, ));
+                new ShipCard("Kaga"), Faction.JAPAN, ShipType.AIRCRAFT-CARRIERS, Rarity.STANDARD, ));
 
         cards.put("JAPAN_AIRCRAFT-CARRIERS",
-                new ShipCard("Akagi"), Fraction.JAPAN, ShipType.AIRCRAFT-CARRIERS, Rarity.STANDARD, ));
+                new ShipCard("Akagi"), Faction.JAPAN, ShipType.AIRCRAFT-CARRIERS, Rarity.STANDARD, ));
 
         cards.put("JAPAN_AIRCRAFT-CARRIERS",
-                new ShipCard("Ryūjō"), Fraction.JAPAN, ShipType.AIRCRAFT-CARRIERS, Rarity.UNIQUE, ));
+                new ShipCard("Ryūjō"), Faction.JAPAN, ShipType.AIRCRAFT-CARRIERS, Rarity.UNIQUE, ));
 
         cards.put("JAPAN_AIRCRAFT-CARRIERS",
-                new ShipCard("Zuikaku"), Fraction.JAPAN, ShipType.AIRCRAFT-CARRIERS, Rarity.UNIQUE, ));
+                new ShipCard("Zuikaku"), Faction.JAPAN, ShipType.AIRCRAFT-CARRIERS, Rarity.UNIQUE, ));
 
         cards.put("JAPAN_AIRCRAFT-CARRIERS",
-                new ShipCard("Shinano"), Fraction.JAPAN, ShipType.AIRCRAFT-CARRIERS, Rarity.LEGENDARY, ));
+                new ShipCard("Shinano"), Faction.JAPAN, ShipType.AIRCRAFT-CARRIERS, Rarity.LEGENDARY, ));
 
 
 
         cards.put("JAPAN_CRUISERS",
-                new ShipCard("Mogami"), Fraction.JAPAN, ShipType.CRUISERS, Rarity.STANDARD, ));
+                new ShipCard("Mogami"), Faction.JAPAN, ShipType.CRUISERS, Rarity.STANDARD, ));
 
         cards.put("JAPAN_CRUISERS",
-                new ShipCard("Takao"), Fraction.JAPAN, ShipType.CRUISERS, Rarity.STANDARD, ));
+                new ShipCard("Takao"), Faction.JAPAN, ShipType.CRUISERS, Rarity.STANDARD, ));
 
         cards.put("JAPAN_CRUISERS",
-                new ShipCard("Atago"), Fraction.JAPAN, ShipType.CRUISERS, Rarity.STANDARD, ));
+                new ShipCard("Atago"), Faction.JAPAN, ShipType.CRUISERS, Rarity.STANDARD, ));
 
         cards.put("JAPAN_CRUISERS",
-                new ShipCard("Kumano"), Fraction.JAPAN, ShipType.CRUISERS, Rarity.UNIQUE, ));
+                new ShipCard("Kumano"), Faction.JAPAN, ShipType.CRUISERS, Rarity.UNIQUE, ));
 
         cards.put("JAPAN_CRUISERS",
-                new ShipCard("Tone"), Fraction.JAPAN, ShipType.CRUISERS, Rarity.UNIQUE, ));
+                new ShipCard("Tone"), Faction.JAPAN, ShipType.CRUISERS, Rarity.UNIQUE, ));
 
         cards.put("JAPAN_CRUISERS",
-                new ShipCard("Chikuma"), Fraction.JAPAN, ShipType.CRUISERS, Rarity.LEGENDARY, ));
+                new ShipCard("Chikuma"), Faction.JAPAN, ShipType.CRUISERS, Rarity.LEGENDARY, ));
 
 
 
         cards.put("JAPAN_DESTROYERS",
-                new ShipCard("Akizuki"), Fraction.JAPAN, ShipType.DESTROYERS, Rarity.STANDARD, ));
+                new ShipCard("Akizuki"), Faction.JAPAN, ShipType.DESTROYERS, Rarity.STANDARD, ));
 
         cards.put("JAPAN_DESTROYERS",
-                new ShipCard("Yūgumo"), Fraction.JAPAN, ShipType.DESTROYERS, Rarity.STANDARD, ));
+                new ShipCard("Yūgumo"), Faction.JAPAN, ShipType.DESTROYERS, Rarity.STANDARD, ));
 
         cards.put("JAPAN_DESTROYERS",
-                new ShipCard("Kagerō"), Fraction.JAPAN, ShipType.DESTROYERS, Rarity.STANDARD, ));
+                new ShipCard("Kagerō"), Faction.JAPAN, ShipType.DESTROYERS, Rarity.STANDARD, ));
 
         cards.put("JAPAN_DESTROYERS",
-                new ShipCard("Shiranui"), Fraction.JAPAN, ShipType.DESTROYERS, Rarity.UNIQUE, ));
+                new ShipCard("Shiranui"), Faction.JAPAN, ShipType.DESTROYERS, Rarity.UNIQUE, ));
 
         cards.put("JAPAN_DESTROYERS",
-                new ShipCard("Tokitsukaze"), Fraction.JAPAN, ShipType.DESTROYERS, Rarity.UNIQUE, ));
+                new ShipCard("Tokitsukaze"), Faction.JAPAN, ShipType.DESTROYERS, Rarity.UNIQUE, ));
 
         cards.put("JAPAN_DESTROYERS",
-                new ShipCard("Hatsuyuki"), Fraction.JAPAN, ShipType.DESTROYERS, Rarity.LEGENDARY, ));
+                new ShipCard("Hatsuyuki"), Faction.JAPAN, ShipType.DESTROYERS, Rarity.LEGENDARY, ));
 
 
 
         cards.put("JAPAN_SUBMARINES",
-                new ShipCard("I-26"), Fraction.JAPAN, ShipType.SUBMARINES, Rarity.STANDARD, ));
+                new ShipCard("I-26"), Faction.JAPAN, ShipType.SUBMARINES, Rarity.STANDARD, ));
 
         cards.put("JAPAN_DESTROYERS",
-                new ShipCard("I-19"), Fraction.JAPAN, ShipType.SUBMARINES, Rarity.STANDARD, ));
+                new ShipCard("I-19"), Faction.JAPAN, ShipType.SUBMARINES, Rarity.STANDARD, ));
 
         cards.put("JAPAN_DESTROYERS",
-                new ShipCard("I-168"), Fraction.JAPAN, ShipType.SUBMARINES, Rarity.STANDARD, ));
+                new ShipCard("I-168"), Faction.JAPAN, ShipType.SUBMARINES, Rarity.STANDARD, ));
 
         cards.put("JAPAN_DESTROYERS",
-                new ShipCard("I-400"), Fraction.JAPAN, ShipType.SUBMARINES, Rarity.UNIQUE, ));
+                new ShipCard("I-400"), Faction.JAPAN, ShipType.SUBMARINES, Rarity.UNIQUE, ));
 
         cards.put("JAPAN_DESTROYERS",
-                new ShipCard("I-58"), Fraction.JAPAN, ShipType.SUBMARINES, Rarity.UNIQUE, ));
+                new ShipCard("I-58"), Faction.JAPAN, ShipType.SUBMARINES, Rarity.UNIQUE, ));
 
         cards.put("JAPAN_DESTROYERS",
-                new ShipCard("I-201"), Fraction.JAPAN, ShipType.SUBMARINES, Rarity.LEGENDARY, ));
+                new ShipCard("I-201"), Faction.JAPAN, ShipType.SUBMARINES, Rarity.LEGENDARY, ));
 
 
 
 
 
         cards.put("ZSRR_BATTLESHIPS",
-                new ShipCard("Parizhskaya Kommuna"), Fraction.ZSRR, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
+                new ShipCard("Parizhskaya Kommuna"), Faction.ZSRR, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
 
         cards.put("ZSRR_BATTLESHIPS",
-                new ShipCard("Oktiabrskaja Riewolucija"), Fraction.ZSRR, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
+                new ShipCard("Oktiabrskaja Riewolucija"), Faction.ZSRR, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
 
         cards.put("ZSRR_BATTLESHIPS",
-                new ShipCard("Marat"), Fraction.ZSRR, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
+                new ShipCard("Marat"), Faction.ZSRR, ShipType.BATTLESHIPS, Rarity.STANDARD, ));
 
         cards.put("ZSRR_BATTLESHIPS",
-                new ShipCard("Sewastopol"), Fraction.ZSRR, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
+                new ShipCard("Sewastopol"), Faction.ZSRR, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
 
         cards.put("ZSRR_BATTLESHIPS",
-                new ShipCard("Gangut"), Fraction.ZSRR, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
+                new ShipCard("Gangut"), Faction.ZSRR, ShipType.BATTLESHIPS, Rarity.UNIQUE, ));
 
         cards.put("ZSRR_BATTLESHIPS",
-                new ShipCard("Marat"), Fraction.ZSRR, ShipType.BATTLESHIPS, Rarity.LEGENDARY, ));
+                new ShipCard("Marat"), Faction.ZSRR, ShipType.BATTLESHIPS, Rarity.LEGENDARY, ));
 
 
 
         cards.put("ZSRR_CRUISERS",
-                new ShipCard("Czerwona Krym"), Fraction.ZSRR, ShipType.CRUISERS, Rarity.STANDARD, ));
+                new ShipCard("Czerwona Krym"), Faction.ZSRR, ShipType.CRUISERS, Rarity.STANDARD, ));
 
         cards.put("ZSRR_CRUISERS",
-                new ShipCard("Czerwona Ukraina"), Fraction.ZSRR, ShipType.CRUISERS, Rarity.STANDARD, ));
+                new ShipCard("Czerwona Ukraina"), Faction.ZSRR, ShipType.CRUISERS, Rarity.STANDARD, ));
 
         cards.put("ZSRR_CRUISERS",
-                new ShipCard("Kirow"), Fraction.ZSRR, ShipType.CRUISERS, Rarity.STANDARD, ));
+                new ShipCard("Kirow"), Faction.ZSRR, ShipType.CRUISERS, Rarity.STANDARD, ));
 
         cards.put("ZSRR_CRUISERS",
-                new ShipCard("Kalinin"), Fraction.ZSRR, ShipType.CRUISERS, Rarity.UNIQUE, ));
+                new ShipCard("Kalinin"), Faction.ZSRR, ShipType.CRUISERS, Rarity.UNIQUE, ));
 
         cards.put("ZSRR_CRUISERS",
-                new ShipCard("Maxim Gorki"), Fraction.ZSRR, ShipType.CRUISERS, Rarity.UNIQUE, ));
+                new ShipCard("Maxim Gorki"), Faction.ZSRR, ShipType.CRUISERS, Rarity.UNIQUE, ));
 
         cards.put("ZSRR_CRUISERS",
-                new ShipCard("Kirow"), Fraction.ZSRR, ShipType.CRUISERS, Rarity.LEGENDARY, ));
+                new ShipCard("Kirow"), Faction.ZSRR, ShipType.CRUISERS, Rarity.LEGENDARY, ));
 
 
 
         cards.put("ZSRR_DESTROYERS",
-                new ShipCard("Gromkij"), Fraction.ZSRR, ShipType.DESTROYERS, Rarity.STANDARD, ));
+                new ShipCard("Gromkij"), Faction.ZSRR, ShipType.DESTROYERS, Rarity.STANDARD, ));
 
         cards.put("ZSRR_DESTROYERS",
-                new ShipCard("Storozhevoy"), Fraction.ZSRR, ShipType.DESTROYERS, Rarity.STANDARD, ));
+                new ShipCard("Storozhevoy"), Faction.ZSRR, ShipType.DESTROYERS, Rarity.STANDARD, ));
 
         cards.put("ZSRR_DESTROYERS",
-                new ShipCard("Gnewnyj"), Fraction.ZSRR, ShipType.DESTROYERS, Rarity.STANDARD, ));
+                new ShipCard("Gnewnyj"), Faction.ZSRR, ShipType.DESTROYERS, Rarity.STANDARD, ));
 
         cards.put("ZSRR_DESTROYERS",
-                new ShipCard("Soobrazitelnyj"), Fraction.ZSRR, ShipType.DESTROYERS, Rarity.UNIQUE, ));
+                new ShipCard("Soobrazitelnyj"), Faction.ZSRR, ShipType.DESTROYERS, Rarity.UNIQUE, ));
 
         cards.put("ZSRR_DESTROYERS",
-                new ShipCard("Rekordnyj"), Fraction.ZSRR, ShipType.DESTROYERS, Rarity.UNIQUE, ));
+                new ShipCard("Rekordnyj"), Faction.ZSRR, ShipType.DESTROYERS, Rarity.UNIQUE, ));
 
         cards.put("ZSRR_DESTROYERS",
-                new ShipCard("Tashkent"), Fraction.ZSRR, ShipType.DESTROYERS, Rarity.LEGENDARY, ));
+                new ShipCard("Tashkent"), Faction.ZSRR, ShipType.DESTROYERS, Rarity.LEGENDARY, ));
 
 
 
         cards.put("ZSRR_SUBMARINES",
-                new ShipCard("S-13"), Fraction.ZSRR, ShipType.SUBMARINES, Rarity.STANDARD, ));
+                new ShipCard("S-13"), Faction.ZSRR, ShipType.SUBMARINES, Rarity.STANDARD, ));
 
         cards.put("ZSRR_SUBMARINES",
-                new ShipCard("Shch-303"), Fraction.ZSRR, ShipType.SUBMARINES, Rarity.STANDARD, ));
+                new ShipCard("Shch-303"), Faction.ZSRR, ShipType.SUBMARINES, Rarity.STANDARD, ));
 
         cards.put("ZSRR_SUBMARINES",
-                new ShipCard("D-2"), Fraction.ZSRR, ShipType.SUBMARINES, Rarity.STANDARD, ));
+                new ShipCard("D-2"), Faction.ZSRR, ShipType.SUBMARINES, Rarity.STANDARD, ));
 
         cards.put("ZSRR_SUBMARINES",
-                new ShipCard("M-class"), Fraction.ZSRR, ShipType.SUBMARINES, Rarity.UNIQUE, ));
+                new ShipCard("M-class"), Faction.ZSRR, ShipType.SUBMARINES, Rarity.UNIQUE, ));
 
         cards.put("ZSRR_SUBMARINES",
-                new ShipCard("K-21"), Fraction.ZSRR, ShipType.SUBMARINES, Rarity.UNIQUE, ));
+                new ShipCard("K-21"), Faction.ZSRR, ShipType.SUBMARINES, Rarity.UNIQUE, ));
 
         cards.put("ZSRR_SUBMARINES",
-                new ShipCard("L-3"), Fraction.ZSRR, ShipType.SUBMARINES, Rarity.LEGENDARY, ));
+                new ShipCard("L-3"), Faction.ZSRR, ShipType.SUBMARINES, Rarity.LEGENDARY, ));
 
 
 

@@ -1,6 +1,7 @@
 package controller;
 
 import model.Player;
+import model.Board;
 
 /**
  * Główny kontroler przepływu gry.

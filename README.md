@@ -1,3 +1,9 @@
+GRADLE:
+
+gradle clean build      # buduje projekt
+gradle run              # uruchamia program
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Dokumentacja Projektowa: Przebieg gry w BATTLESHIPS
 1. Przegląd Projektu
 Przebieg gry w BATTLESHIPS to implementacja strategicznej gry turowej w języku Java (SE 21), łącząca mechanikę gier planszowych z elementami karcianymi (Deck Building). Aplikacja symuluje potyczki morskie na macierzy 6x6, wykorzystując zróżnicowane frakcje, typy jednostek oraz system zarządzania zasobami (ekonomia kredytów).

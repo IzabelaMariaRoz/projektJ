@@ -1,62 +1,42 @@
-GRADLE:
+* **IDE:** Eclipse
+* **Dane:** Pliki CSV (Parsowanie strumieniowe)
+* **Kontrola Wersji:** Git
 
-gradle clean build      # buduje projekt
-gradle run              # uruchamia program
+### Architektura Systemu
+* **Model:** Przechowuje stan gry (Plansze, Statki, Rękę Gracza). Jest całkowicie niezależny od interfejsu.
+* **Controller:** Zawiera logikę biznesową – `AbilityFactory` (tłumaczenie kodów tekstowych na kod Java), `GameManager` (turowe zarządzanie grą).
+* **View:** Warstwa prezentacji (obecnie logi konsolowe / szkielet Swing).
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Dokumentacja Projektowa: Przebieg gry w BATTLESHIPS
-1. Przegląd Projektu
-Przebieg gry w BATTLESHIPS to implementacja strategicznej gry turowej w języku Java (SE 21), łącząca mechanikę gier planszowych z elementami karcianymi (Deck Building). Aplikacja symuluje potyczki morskie na macierzy 6x6, wykorzystując zróżnicowane frakcje, typy jednostek oraz system zarządzania zasobami (ekonomia kredytów).
+---
 
-Projekt realizowany jest w oparciu o wzorzec architektoniczny MVC (Model-View-Controller), z wykorzystaniem biblioteki Swing do obsługi interfejsu graficznego użytkownika.
+## 3. Mechanika i Logika Gry
 
-2. Specyfikacja Techniczna
-Stos Technologiczny
-Język: Java SE 21
+### 3.1. System Danych (CSV)
+Gra nie posiada "sztywno" wpisanych statystyk w kodzie. Wszystkie dane ładowane są dynamicznie przy starcie aplikacji z folderu `src/main/resources`:
+* **`ships.csv`**: Baza 114 statków z parametrami HP, kosztem umiejętności i kodami efektów.
+* **`actions.csv`**: Baza kart akcji (Talia), zawierająca opisy i efekty kart zagrywanych z ręki.
 
-GUI: Java Swing (javax.swing)
+### 3.2. Jednostki (Ship Cards)
+Każdy statek na planszy jest obiektem posiadającym:
+* **Statystyki:** HP (skalowane wg rzadkości, od 5 do 24 pkt), Koszt Umiejętności.
+* **Active Ability (Aktywna):** Unikalna zdolność uruchamiana przez gracza za walutę (Kredyty). Przykłady: *Strzał Snajperski, Radar, Torpeda*.
+* **Passive Ability (Pasywna):** Mechanika "Reakcyjna", uruchamiana automatycznie w momencie odsłonięcia/ataku na statek. Przykłady: *Pancerz (redukcja obrażeń), Unik, Kontratak*.
 
-IDE: Eclipse
+### 3.3. System Walki i Kart Akcji
+Gra łączy dwa systemy walki:
+1.  **Umiejętności Statków:** Jednostki na planszy mogą atakować lub wspierać inne, zużywając Kredyty.
+2.  **Karty Akcji (Hand):** Gracz dobiera karty z talii (`ActionDeck`). Karty te (np. *Nalot Dywanowy*, *Szybka Naprawa*) są jednorazowe i nie zużywają akcji statku.
 
-Kontrola Wersji: Git
+### 3.4. System Doboru Floty (Draft)
+Przed grą następuje losowanie floty (5 statków) z uwzględnieniem rzadkości:
+* **Standard (85%):** Podstawowe jednostki.
+* **Unique (10%):** Ulepszone statystyki i umiejętności.
+* **Legendary (5%):** "Bossowie" z potężnymi pasywkami (np. Pancerz redukujący 3 obrażenia).
 
-Architektura Systemu (MVC)
-Projekt został podzielony na trzy niezależne warstwy logiczne:
+**Wyjątek Frakcji ZSRR:**
+Zgodnie z historycznym balansem, frakcja ZSRR nie losuje Lotniskowców. W zamian otrzymuje dodatkowy slot na Pancernik, stawiając na siłę ognia artyleryjskiego.
 
-Model (src/model): Odpowiada za strukturę danych i stan gry. Zawiera definicje kart, logikę planszy oraz parametry gracza. Nie posiada zależności do warstwy widoku.
-
-View (src/view): Odpowiada za prezentację danych. Implementuje komponenty Swing (JFrame, JPanel) renderujące stan planszy i rękę gracza.
-
-Controller (src/controller): Pośredniczy między modelem a widokiem. Przetwarza interakcje użytkownika i zarządza przepływem gry (Game Loop, Draft System).
-
-3. Mechanika i Logika Gry
-3.1. System Doboru Floty (Draft System)
-Przed rozpoczęciem rozgrywki następuje faza losowania jednostek. Każdy gracz otrzymuje flotę składającą się z 5 kart. Algorytm losujący uwzględnia ważone prawdopodobieństwo rzadkości kart:
-
-Standard: 85% szans
-
-Unique (Unikalna): 10% szans
-
-Legendary (Legendarna): 5% szans
-
-3.2. Frakcje i Balans
-Gra obsługuje cztery frakcje o zróżnicowanej specyfice. Zaimplementowano unikalną logikę dla frakcji ZSRR:
-
-GER / USA / JAP: Standardowy schemat losowania (1x Lotniskowiec, 1x Pancernik, 1x Krążownik, 1x Niszczyciel, 1x Okręt Podwodny).
-
-ZSR (Związek Radziecki): Zmodyfikowany algorytm doboru – frakcja nie posiada lotniskowców. W zamian otrzymuje dodatkowy slot na Pancernik (2x Pancernik w puli).
-
-3.3. Środowisko Rozgrywki
-Plansza: Macierz obiektów ShipCard o wymiarach 6x6.
-
-
-Ekonomia: System "Kredytów" przyznawanych co turę, wymaganych do aktywacji metod specjalnych (umiejętności) zdefiniowanych w obiektach kart.
-
-Warunki Zwycięstwa: Całkowita eliminacja jednostek przeciwnika z macierzy planszy.
-
-4. Struktura Projektu
-Poniżej przedstawiono opis kluczowych klas i pakietów w strukturze katalogów:
-
+---
 Plaintext
 
 src/

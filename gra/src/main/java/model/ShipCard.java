@@ -4,50 +4,146 @@ import model.enums.Faction;
 import model.enums.Rarity;
 import model.enums.ShipType;
 
-import java.io.Serializable;
-
-public class ShipCard extends Card implements Serializable {
-    private static final long serialVersionUID = 1L; // Wersjonowanie klasy
-
+public class ShipCard extends Card {
+    
     private Faction faction;
     private ShipType type;
     private Rarity rarity;
-
-    private int hp;
-    private int attack;
-    private int abilityCost;
+    
+    // Statystyki podstawowe
+    private int maxHp;
+    private int currentHp;
     private boolean isFaceDown;
+    
+    // Referencja do planszy (dla Radaru)
+    private Board board;
 
-    public ShipCard(String name, Faction faction, ShipType type, Rarity rarity, int hp, int attack, int abilityCost) {
+    // --- DANE Z CSV (Opisy i parametry) ---
+    private String activeAbilityName;  
+    private String activeAbilityEnum;  
+    private int abilityCost;           
+    private int activeParams;          
+
+    private String passiveAbilityName; 
+    private String passiveAbilityEnum; 
+    private int passiveParams;         
+
+    // --- INTERFEJSY FUNKCYJNE (Logika) ---
+    private ActiveAbility activeAbility;   
+    private PassiveAbility passiveAbility; 
+
+    // Konstruktor
+    public ShipCard(String name, Faction faction, ShipType type, Rarity rarity, int hp,
+                    String activeName, int cost, String activeEnum, int activeVal,
+                    String passiveName, String passiveEnum, int passiveVal) {
         super(name);
         this.faction = faction;
         this.type = type;
         this.rarity = rarity;
-        this.hp = hp;
-        this.attack = attack;
-        this.abilityCost = abilityCost;
+        
+        this.maxHp = hp;
+        this.currentHp = hp;
         this.isFaceDown = true;
+
+        // Przypisanie danych z CSV
+        this.activeAbilityName = activeName;
+        this.abilityCost = cost;
+        this.activeAbilityEnum = activeEnum;
+        this.activeParams = activeVal;
+        
+        this.passiveAbilityName = passiveName;
+        this.passiveAbilityEnum = passiveEnum;
+        this.passiveParams = passiveVal;
     }
 
-    // Gettery
-    public Rarity getRarity() { return rarity; }
-    public int getAttack() { return attack; }
-    public ShipType getType() { return type; }
-    public int getHp() { return hp; }
+    // --- METODY LOGICZNE (Używane przez AbilityFactory) ---
+
+    public void setBoard(Board board) {
+        this.board = board;
+    }
+
+    public Board getBoard() {
+        return this.board;
+    }
+
+    public void heal(int amount) {
+        this.currentHp += amount;
+        if (this.currentHp > this.maxHp) {
+            this.currentHp = this.maxHp;
+        }
+        System.out.println(this.name + " naprawiony o " + amount + " HP. (Obecnie: " + currentHp + "/" + maxHp + ")");
+    }
+
+    public void addAttackBuff(int amount) {
+        System.out.println("BUFF: " + this.name + " zwiększa siłę ognia o " + amount + "!");
+    }
+
+    // Wywołanie aktywnej umiejętności
+    public void performAction(ShipCard target) {
+        if (this.activeAbility != null) {
+            System.out.println(this.name + " używa: " + this.activeAbilityName);
+            this.activeAbility.use(this, target);
+        } else {
+            System.out.println(this.name + " nie ma aktywnej umiejętności.");
+        }
+    }
+
+    // Wywołanie pasywki i odsłonięcie
+    public void reveal(ShipCard attacker) {
+        if (this.isFaceDown) {
+            this.isFaceDown = false;
+            System.out.println(">>> ODKRYTO JEDNOSTKĘ: " + this.getName() + " [" + this.getHp() + " HP]");
+            triggerPassive(attacker);
+        }
+    }
+
+    public void triggerPassive(ShipCard attacker) {
+        if (this.passiveAbility != null) {
+            this.passiveAbility.trigger(this, attacker);
+        }
+    }
+
+    public void takeDamage(int dmg) {
+        this.currentHp -= dmg;
+        if (this.currentHp < 0) this.currentHp = 0;
+        System.out.println(this.name + " otrzymuje " + dmg + " obrażeń. Zostało: " + currentHp);
+        
+        // Jeśli oberwał, a był zakryty -> odsłaniamy
+        if (this.isFaceDown) {
+            reveal(null); // null, bo nie zawsze znamy źródło przy zwykłym dmg
+        }
+    }
+
+    // --- GETTERY I SETTERY ---
+
+    public void setActiveAbility(ActiveAbility ability) { this.activeAbility = ability; }
+    public void setPassiveAbility(PassiveAbility ability) { this.passiveAbility = ability; }
+
+    public ActiveAbility getActiveAbility() { return activeAbility; }
+    public PassiveAbility getPassiveAbility() { return passiveAbility; }
+
     public Faction getFaction() { return faction; }
+    public ShipType getType() { return type; }
+    public Rarity getRarity() { return rarity; }
+    public int getHp() { return currentHp; }
+    public int getMaxHp() { return maxHp; }
+    public int getAbilityCost() { return abilityCost; }
     public boolean isFaceDown() { return isFaceDown; }
+    public void setFaceDown(boolean faceDown) { this.isFaceDown = faceDown; }
 
-    public void activateAbility() { /* logika */ }
+    // --- KLUCZOWE GETTERY DO NAPRAWY BŁĘDU ---
+    public String getActiveAbilityName() { return activeAbilityName; }
+    public String getPassiveAbilityName() { return passiveAbilityName; }
+    // ------------------------------------------
 
-    public void takeDamage(int damage) {
-        this.hp -= damage;
-        if (hp < 0) hp = 0;
-    }
-
-    public boolean isDestroyed() { return hp <= 0; }
+    public String getActiveAbilityEnum() { return activeAbilityEnum; }
+    public int getActiveParams() { return activeParams; }
+    public String getPassiveAbilityEnum() { return passiveAbilityEnum; }
+    public int getPassiveParams() { return passiveParams; }
 
     @Override
     public String getInfo() {
-        return name + " [" + faction + "] HP:" + hp + " ATK:" + attack;
+        return String.format("%s [%s] HP:%d | Skill: %s (%d kr)", 
+                name, rarity, currentHp, activeAbilityName, abilityCost);
     }
 }

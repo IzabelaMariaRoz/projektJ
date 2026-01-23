@@ -9,42 +9,38 @@ import model.enums.Faction;
 import model.enums.Rarity;
 import model.enums.ShipType;
 
-/**
- * Odpowiada za mechanikę doboru floty na początku gry.
- * Obsługuje logikę procentową (85/10/5) oraz wyjątek dla ZSRR.
- */
 public class DraftSystem {
     private Random random = new Random(); 
 
     public List<ShipCard> draftFleet(Faction faction) {
         List<ShipCard> fleet = new ArrayList<>();
         
-        // TODO: Zaimplementować logikę losowania rzadkości (Rarity)
+        // Definiujemy bazowe typy (4 sloty)
         List<ShipType> types = new ArrayList<>(List.of(
             ShipType.BATTLESHIP, ShipType.CRUISER, ShipType.DESTROYER, ShipType.SUBMARINE
         ));
 
-        // Wyjątek dla ZSRR: 
+        // 5 slot - Wyjątek dla ZSRR: dodatkowy Pancernik zamiast Lotniskowca
         if (faction == Faction.ZSRR) {
-            types.add(ShipType.BATTLESHIP); // Dodatkowy Pancernik
+            types.add(ShipType.BATTLESHIP); 
         } else {
-            types.add(ShipType.AIRCRAFT_CARRIER); // Standardowy Lotniskowiec
+            types.add(ShipType.AIRCRAFT_CARRIER); 
         }
         
-        // Przykład użycia bazy:
+        // Losujemy rzadkość dla każdego slotu i tworzymy kartę
         for (ShipType type : types) {
             Rarity rarity = rollRarity();
+            // Wywołujemy bazę danych kolegi, żeby stworzyć obiekt
             fleet.add(CardDatabase.createCard(faction, type, rarity));
         }  
-        // fleet.add(CardDatabase.createCard(faction, ShipType.BATTLESHIP, Rarity.STANDARD));
         
         return fleet;
     } 
 
     private Rarity rollRarity() {
-        int roll = random.nextInt(100); // 0-99
-        if (roll < 5) return Rarity.LEGENDARY;  // 5%
-        if (roll < 15) return Rarity.UNIQUE;    // 10%
-        return Rarity.STANDARD;                 // 85%
+        int roll = random.nextInt(100); 
+        if (roll < 5) return Rarity.LEGENDARY;  // 5% szans
+        if (roll < 15) return Rarity.UNIQUE;    // 10% szans (5+10)
+        return Rarity.STANDARD;                 // 85% szans
     }
 }

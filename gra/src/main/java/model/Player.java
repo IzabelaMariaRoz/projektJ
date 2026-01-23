@@ -5,13 +5,13 @@ import java.util.List;
 
 /**
  * Reprezentuje gracza.
- * Przechowuje jego rękę, talię, kredyty oraz referencję do jego planszy.
+ * Przechowuje jego rękę (flotę), talię, kredyty oraz referencję do jego planszy.
  */
 public class Player {
 
     private String nickname;
     private int credits;
-    private List<ShipCard> hand; // Karty w ręce
+    private List<ShipCard> hand; // Karty w ręce (obecna flota na planszy)
     private List<ShipCard> deck; // Karty w talii (do dobrania)
     private Board board;         // Plansza gracza
 
@@ -23,19 +23,44 @@ public class Player {
         this.board = new Board();
     }
 
-    // TODO: Dodawanie kredytów co turę
+    // Dodawanie kredytów co turę
     public void addCredits(int amount) {
         this.credits += amount;
     }
 
-    // TODO: Dobieranie karty z talii do ręki
+    // Dobieranie karty z talii do ręki
     public void drawCard() {
         if (!deck.isEmpty()) {
             hand.add(deck.remove(0));
         }
     }
 
-    public Board getBoard() { return board; }
-    public List<ShipCard> getHand() { return hand; }
-    public void setDeck(List<ShipCard> newDeck) { this.deck = newDeck; }
+    // --- METODY POTRZEBNE DO LOGIKI GRY ---
+
+    public String getName() {
+        return nickname;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+
+    public List<ShipCard> getHand() {
+        return hand;
+    }
+
+    /**
+     * Ustawia startową flotę (np. po losowaniu w DraftSystem)
+     */
+    public void setHand(List<ShipCard> newHand) {
+        this.hand = newHand;
+    }
+
+    public void setDeck(List<ShipCard> newDeck) {
+        this.deck = newDeck;
+    }
+
+    public Board getBoard() {
+        return board;
+    }
 }

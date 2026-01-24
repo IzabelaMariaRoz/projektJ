@@ -9,7 +9,9 @@ import java.awt.event.*;
 
 import model.Board;
 import model.ShipCard;
-
+import model.enums.Faction;
+import controller.DraftSystem;
+import java.util.List;
 
 /**
  * Główne okno aplikacji (JFrame).
@@ -19,6 +21,7 @@ public class GameWindow extends JFrame {
 
     private JPanel mainPanel;
     private CardLayout cardLayout;
+    private BoardPanel boardPanel;
 
     public GameWindow(Board board, ShipCard[] hand) {
         super("BATTLESHIPS");

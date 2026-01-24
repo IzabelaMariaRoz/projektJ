@@ -1,8 +1,15 @@
 package view;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
+import view.BoardPanel;
+import view.StartPanel;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+import model.Board;
+import model.ShipCard;
+
 
 /**
  * Główne okno aplikacji (JFrame).
@@ -10,26 +17,42 @@ import java.awt.BorderLayout;
  */
 public class GameWindow extends JFrame {
 
-    private BoardPanel playerBoardPanel;
-    private BoardPanel enemyBoardPanel;
+    private JPanel mainPanel;
+    private CardLayout cardLayout;
 
-    public GameWindow() {
-        super("Przebieggryw BATTLESHIPS");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    public GameWindow(Board board, ShipCard[] hand) {
+        super("BATTLESHIPS");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);     //metoda do zamykania naszego okna
         setSize(1024, 768);
-        setLayout(new BorderLayout());
+        setLocationRelativeTo(null);
 
-        // Inicjalizacja komponentów
-        initUI();
+        cardLayout = new CardLayout();
+        mainPanel = new JPanel(cardLayout);
 
+        StartPanel startPanel = new StartPanel();
+        BoardPanel boardPanel = new BoardPanel();
+
+        boardPanel.setHand(hand);
+        boardPanel.refresh(board);
+
+        setBackground(new Color(30, 30, 60));
+
+
+        mainPanel.add(startPanel, "START");
+        mainPanel.add(boardPanel, "BOARD");
+
+        cardLayout.show(mainPanel, "START");
+
+
+        startPanel.setPlayAction(e -> showBoardPanel());
+
+        add(mainPanel);
         setVisible(true);
     }
 
-    private void initUI() {
-        // TODO: Podział okna na strefę gracza i przeciwnika
-        playerBoardPanel = new BoardPanel();
-        add(playerBoardPanel, BorderLayout.CENTER);
-
-        // TODO: Dodanie panelu ręki, panelu info itp.
+    public void showBoardPanel(){
+        cardLayout.show(mainPanel, "BOARD");
     }
+
+
 }

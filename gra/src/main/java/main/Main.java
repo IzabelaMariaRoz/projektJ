@@ -1,78 +1,38 @@
-package model;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
+import controller.DraftSystem;
+import view.GameWindow;
+import model.enums.Faction;
 import model.enums.Rarity;
+import model.enums.ShipType;
+import model.ShipCard;
+import model.Board;
+import view.BoardPanel;
+import java.util.List;
+import javax.swing.*;
 
-public class ActionDatabase {
+import javax.swing.JFrame;
 
-    private static final List<ActionCard> deck = new ArrayList<>();
-    private static final Random random = new Random();
 
-    static {
-        loadActions();
-    }
+public class Main {
+    public static void main(String[] args){
+        DraftSystem draft = new DraftSystem();
+        List<ShipCard> fleet = draft.draftFleet(Faction.USA);
+        BoardPanel boardPanel = new BoardPanel();
+        Board board = new Board();
 
-    private static void loadActions() {
-        String filename = "actions.csv";
-        try {
-            // Wczytywanie pliku z resources
-            InputStream is = ActionDatabase.class.getClassLoader().getResourceAsStream(filename);
-            
-            if (is == null) {
-                System.err.println("BŁĄD: Nie znaleziono pliku actions.csv w folderze src!");
-                return;
-            }
+        ShipCard[] hand = fleet.stream().limit(5).toArray(ShipCard[]::new);
+        boardPanel.setHand(hand);
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
-            String line;
-            boolean header = true;
-
-            while ((line = reader.readLine()) != null) {
-                if (header) { header = false; continue; }
-                if (line.trim().isEmpty()) continue;
-
-                String[] data = line.split(";");
-                // Oczekujemy formatu: id;name;rarity;action_enum;value;description
-                if (data.length < 6) continue;
-
-                try {
-                    String name = data[1];
-                    Rarity rarity = Rarity.valueOf(data[2]);
-                    String actionEnum = data[3];
-                    int value = Integer.parseInt(data[4]);
-                    String desc = data[5];
-    
-                    ActionCard card = new ActionCard(name, rarity, actionEnum, value, desc);
-                    
-                    
-                    card.setEffect(AbilityFactory.createActive(actionEnum, value));
-    
-                    deck.add(card);
-                } catch (Exception e) {
-                    System.err.println("Błąd w linii actions.csv: " + line);
-                }
-            }
-            System.out.println("Załadowano " + deck.size() + " kart akcji.");
-            
-        } catch (Exception e) {
-            e.printStackTrace();
+        for (int i = 0; i < hand.length && i < 6; i++) {
+            board.placeShip(hand[i], 0, i);
         }
-    }
+        boardPanel.refresh(board);
 
-    /**
-     * Dobiera losową kartę z talii.
-     */
-    public static ActionCard drawCard() {
-        if (deck.isEmpty()) return null;
-        
-        // losowanie jednej z gotowych kart
-        return deck.get(random.nextInt(deck.size()));
+
+        SwingUtilities.invokeLater(new Runnable(){
+            @Override
+            public void run(){
+                new GameWindow(board, hand);
+            }
+        });
     }
 }

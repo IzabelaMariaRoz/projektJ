@@ -7,9 +7,8 @@ import model.ActionDatabase;
 import java.util.Scanner;
 import java.util.List;
 
-/**
- * Główny kontroler przepływu gry (Wersja Tekstowa).
- */
+ //Główny kontroler przepływu gry (Wersja Tekstowa)
+
 public class GameManager {
     
     private Player player1;
@@ -23,7 +22,6 @@ public class GameManager {
         this.player2 = p2;
     }
 
-    // Metoda startująca pętlę gry w konsoli
     public void startGame() {
         System.out.println("=== ROZPOCZYNAMY BITWĘ: " + player1.getName() + " vs " + player2.getName() + " ===");
         
@@ -34,20 +32,16 @@ public class GameManager {
             System.out.println("\n-------------------------------------------");
             System.out.println("TURA " + currentTurn + " | GRACZ: " + active.getName());
             
-            // 1. Dodanie kredytów co turę
             active.addCredits(2);
             System.out.println("Zasoby: " + active.getCredits() + " kredytów.");
 
-            // 2. Dobranie karty akcji z bazy (logika kolegi)
             ActionCard drawn = ActionDatabase.drawCard();
             if (drawn != null) {
                 System.out.println("Dobrano kartę akcji: " + drawn.getName());
             }
 
-            // 3. Wyświetlenie stanu floty
             showFleetStatus(active);
 
-            // 4. Menu akcji
             System.out.println("\nWYBIERZ AKCJĘ: [1] Atak statkiem | [2] Koniec tury | [9] Wyjdź");
             int choice = scanner.nextInt();
 
@@ -57,7 +51,6 @@ public class GameManager {
                 break;
             }
 
-            // Zmiana tury
             isP1Turn = !isP1Turn;
             if (isP1Turn) currentTurn++;
         }
@@ -72,16 +65,12 @@ public class GameManager {
             return;
         }
 
-        // Uproszczenie: pierwszy statek gracza atakuje pierwszy statek wroga
         ShipCard attacker = myShips.get(0);
         ShipCard target = enemyShips.get(0);
 
         System.out.println("\n>>> " + attacker.getName() + " używa umiejętności na " + target.getName());
-        
-        // Wywołanie logiki z Twojego AbilityFactory
         attacker.performAction(target);
 
-        // Usuwanie zniszczonych jednostek
         if (target.getHp() <= 0) {
             System.out.println("!!! Statek " + target.getName() + " został zatopiony!");
             enemyShips.remove(target);
@@ -105,6 +94,25 @@ public class GameManager {
             System.out.println("\nKONIEC GRY! Wygrał " + player1.getName());
             return true;
         }
+        return false;
+    }
+
+     /* Logika łącząca GUI z modelem. 
+     * Wywoływana, gdy karta zostaje przeciągnięta na planszę.*/
+    public boolean placeShipFromHand(Player player, ShipCard ship, int row, int col) {
+        // 1. Próbujemy położyć statek na planszy
+        if (player.getBoard().placeShip(ship, row, col)) {
+            
+            // 2. Jeśli się udało, usuwamy z decka (hand)
+            // To rozwiązuje problem, o którym pisała Izabela
+            boolean removed = player.getHand().remove(ship); 
+            
+            if (removed) {
+                System.out.println("LOGIKA: Statek postawiony i usunięty z decka.");
+                return true;
+            }
+        }
+        System.out.println("LOGIKA: Nie udało się postawić statku.");
         return false;
     }
 }

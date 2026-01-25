@@ -6,8 +6,10 @@ import model.ActionCard;
 import model.ActionDatabase;
 import java.util.Scanner;
 import java.util.List;
-
- //Główny kontroler przepływu gry (Wersja Tekstowa)
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 public class GameManager {
     
@@ -86,33 +88,62 @@ public class GameManager {
     }
 
     public boolean checkGameOver() {
-        if (player1.getHand().isEmpty()) {
-            System.out.println("\nKONIEC GRY! Wygrał " + player2.getName());
+        // Sprawdzamy czy gracz nie ma już kart w ręce ORAZ statków na planszy
+        if (player1.getHand().isEmpty() && player1.getBoard().getShipsOnBoard().isEmpty()) {
+            saveWinReport(player2);
             return true;
         }
-        if (player2.getHand().isEmpty()) {
-            System.out.println("\nKONIEC GRY! Wygrał " + player1.getName());
+        if (player2.getHand().isEmpty() && player2.getBoard().getShipsOnBoard().isEmpty()) {
+            saveWinReport(player1);
             return true;
         }
         return false;
     }
 
-     /* Logika łącząca GUI z modelem. 
-     * Wywoływana, gdy karta zostaje przeciągnięta na planszę.*/
+ /* Generuje raport końcowy bitwy do pliku tekstowego po spełnieniu warunków wygranej.
+     * Zapisuje kluczowe statystyki: nazwę zwycięzcy, liczbę tur oraz pozostałe zasoby.
+     * * @param winner Obiekt gracza, który wygrał pojedynek. */
+    private void saveWinReport(Player winner) {
+        try (PrintWriter writer = new PrintWriter("win_report.txt")) {
+            writer.println("=== RAPORT KOŃCOWY BITWY ===");
+            writer.println("Zwycięzca: " + winner.getName());
+            writer.println("Tury: " + currentTurn);
+            writer.println("Pozostałe kredyty: " + winner.getCredits());
+            writer.println("Data: " + new java.util.Date());
+            System.out.println("LOGIKA: Raport zapisany w win_report.txt");
+        } catch (IOException e) {
+            System.err.println("Błąd zapisu raportu: " + e.getMessage());
+        }
+    }
+
     public boolean placeShipFromHand(Player player, ShipCard ship, int row, int col) {
-        // 1. Próbujemy położyć statek na planszy
+        // Próba postawienia na planszy
         if (player.getBoard().placeShip(ship, row, col)) {
-            
-            // 2. Jeśli się udało, usuwamy z decka (hand)
-            // To rozwiązuje problem, o którym pisała Izabela
+            // Jeśli się udało, usuwamy z ręki (decka)
             boolean removed = player.getHand().remove(ship); 
-            
             if (removed) {
-                System.out.println("LOGIKA: Statek postawiony i usunięty z decka.");
+                System.out.println("LOGIKA: Statek " + ship.getName() + " postawiony i usunięty z decka.");
                 return true;
             }
         }
-        System.out.println("LOGIKA: Nie udało się postawić statku.");
+        System.out.println("LOGIKA: Nie udało się postawić statku na polu [" + row + "][" + col + "]");
         return false;
+    }
+
+    public MouseAdapter getMouseHandler(Player player, ShipCard ship) {
+        return new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                // Obliczanie pola (zakładając standardową siatkę w GUI)
+                int row = e.getY() / 100; 
+                int col = e.getX() / 100;
+                
+                System.out.println("Myszka puszczona na: " + row + ", " + col);
+                
+                if (placeShipFromHand(player, ship, row, col)) {
+                    System.out.println("Myszka: Sukces postawienia statku.");
+                }
+            }
+        };
     }
 }

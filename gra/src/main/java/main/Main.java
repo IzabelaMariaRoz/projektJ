@@ -1,23 +1,28 @@
 import controller.DraftSystem;
+import controller.GameManager;
+import model.Player;
 import view.GameWindow;
 import model.enums.Faction;
-import model.enums.Rarity;
-import model.enums.ShipType;
 import model.ShipCard;
 import model.Board;
 import view.BoardPanel;
 import java.util.List;
 import javax.swing.*;
 
-import javax.swing.JFrame;
-
-
 public class Main {
     public static void main(String[] args){
         DraftSystem draft = new DraftSystem();
-        List<ShipCard> fleet = draft.draftFleet(Faction.USA);
+        
+        Player p1 = new Player("Gracz 1", Faction.USA);
+        Player p2 = new Player("Gracz 2", Faction.ZSRR);
+        
+        List<ShipCard> fleet = draft.draftFleet(p1.getFaction());
+        p1.setHand(fleet);
+        
+        GameManager gm = new GameManager(p1, p2);
+        
         BoardPanel boardPanel = new BoardPanel();
-        Board board = new Board();
+        Board board = p1.getBoard();
 
         ShipCard[] hand = fleet.stream().limit(5).toArray(ShipCard[]::new);
         boardPanel.setHand(hand);
@@ -26,7 +31,6 @@ public class Main {
             board.placeShip(hand[i], 0, i);
         }
         boardPanel.refresh(board);
-
 
         SwingUtilities.invokeLater(new Runnable(){
             @Override

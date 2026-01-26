@@ -5,6 +5,8 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import model.ShipCard;
 
+
+
 /**
  * Komponent wizualny pojedynczej karty.
  * Rysuje prostokąt z nazwą statku i jego statystykami.
@@ -13,6 +15,7 @@ public class CardComponent extends JPanel {
 
     private ShipCard cardData;
     private JLabel nameLabel;
+    private Image shipImage;
 
     private static final int CARD_WIDTH = 150;
     private static final int CARD_HEIGHT = 100;
@@ -46,12 +49,12 @@ public class CardComponent extends JPanel {
                     "</center></html>";
             nameLabel.setText(text);
             setBackground(Color.LIGHT_GRAY);
-//
-//            if (cardData.getImage() != null) {
-//                shipImage = cardData.getImage().getImage(); // konwertujemy ImageIcon na Image
-//            } else {
-//                shipImage = null;
-//            }
+
+            if (cardData.getImage() != null) {
+                shipImage = cardData.getImage(); // konwertujemy ImageIcon na Image
+            } else {
+                shipImage = null;
+            }
         } else {
             nameLabel.setText("");
             setBackground(Color.WHITE);
@@ -64,33 +67,20 @@ public class CardComponent extends JPanel {
         return new Dimension(CARD_WIDTH, CARD_HEIGHT);
     }
 
-//    @Override
-//    protected void paintComponent(Graphics g) {
-//        super.paintComponent(g);
-//
-//        if (shipImage != null) {
-//            int panelWidth = getWidth();
-//            int panelHeight = getHeight() - nameLabel.getHeight(); // zostaw miejsce na tekst
-//
-//            int imgWidth = shipImage.getWidth(this);
-//            int imgHeight = shipImage.getHeight(this);
-//            double imgAspect = (double) imgWidth / imgHeight;
-//            double panelAspect = (double) panelWidth / panelHeight;
-//
-//            int drawWidth, drawHeight;
-//
-//            if (panelAspect > imgAspect) {
-//                drawHeight = panelHeight;
-//                drawWidth = (int) (drawHeight * imgAspect);
-//            } else {
-//                drawWidth = panelWidth;
-//                drawHeight = (int) (drawWidth / imgAspect);
-//            }
-//
-//            int x = (panelWidth - drawWidth) / 2;
-//            int y = (panelHeight - drawHeight) / 2;
-//
-//            g.drawImage(shipImage, x, y, drawWidth, drawHeight, this);
-//        }
-//    }
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        Image shipImage = null;
+        if (cardData != null) {
+            shipImage = cardData.getImage();
+        }
+
+        if (shipImage != null) {
+            int x = 10, y = 10;
+            int drawWidth = 100;
+            int drawHeight = 150;
+            g.drawImage(shipImage, x, y, drawWidth, drawHeight, this);
+        }
+    }
 }

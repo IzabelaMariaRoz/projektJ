@@ -47,7 +47,7 @@ public class GameWindow extends JFrame {
         cardLayout.show(mainPanel, "START");
 
 
-        startPanel.setPlayAction(e -> showBoardPanel());
+        startPanel.setPlayAction(e -> cardLayout.show(mainPanel, "BOARD"));
 
         add(mainPanel);
         setVisible(true);

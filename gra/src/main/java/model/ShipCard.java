@@ -3,9 +3,13 @@ package model;
 import model.enums.Faction;
 import model.enums.Rarity;
 import model.enums.ShipType;
+import javax.swing.ImageIcon;
+import java.awt.Image;
+
 
 public class ShipCard extends Card {
-    
+
+    private String name;
     private Faction faction;
     private ShipType type;
     private Rarity rarity;
@@ -30,7 +34,10 @@ public class ShipCard extends Card {
 
     // --- INTERFEJSY FUNKCYJNE (Logika) ---
     private ActiveAbility activeAbility;   
-    private PassiveAbility passiveAbility; 
+    private PassiveAbility passiveAbility;
+
+
+    private ImageIcon imageIcon;
 
     // Konstruktor
     public ShipCard(String name, Faction faction, ShipType type, Rarity rarity, int hp,
@@ -55,6 +62,22 @@ public class ShipCard extends Card {
         this.passiveAbilityEnum = passiveEnum;
         this.passiveParams = passiveVal;
     }
+
+    // Setter obrazka (można ustawić po utworzeniu)
+    public void setImageIcon(ImageIcon icon) {
+        this.imageIcon = icon;
+    }
+
+    // Getter do Image
+    public Image getImage() {
+        return imageIcon != null ? imageIcon.getImage() : null;
+    }
+
+    // Getter do ImageIcon
+    public ImageIcon getImageIcon() {
+        return imageIcon;
+    }
+
 
     // --- METODY LOGICZNE (Używane przez AbilityFactory) ---
 

@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import javax.swing.ImageIcon;
+import java.awt.Image;
 
 import model.enums.Faction;
 import model.enums.Rarity;
@@ -78,15 +80,24 @@ public class CardDatabase {
                             passiveName, passiveEnum, passiveParam
                     );
 
-                    // 5. PRZYPISANIE LOGIKI Z FABRYKI
+
+                    String imageFileName = (data.length > 13) ? data[13].trim() : "";
+                    if (!imageFileName.isEmpty()) {
+                        ImageIcon icon = new ImageIcon(CardDatabase.class.getResource("/images/" + imageFileName));
+                        newCard.setImageIcon(icon);
+                    }
+
+// --- Dodanie logiki zdolności (TYLKO RAZ) ---
                     newCard.setActiveAbility(AbilityFactory.createActive(activeEnum, activeParam));
                     newCard.setPassiveAbility(AbilityFactory.createPassive(passiveEnum, passiveParam));
 
-                    // 6. Rejestracja w mapie
+// --- Rejestracja karty w bazie ---
                     String key = generateKey(faction, type, rarity);
                     database.putIfAbsent(key, new ArrayList<>());
                     database.get(key).add(newCard);
-                    
+
+
+
                 } catch (IllegalArgumentException e) {
                     System.err.println("Błąd parsowania linii: " + line + " -> " + e.getMessage());
                 }
@@ -141,4 +152,9 @@ public class CardDatabase {
     private static String generateKey(Faction f, ShipType t, Rarity r) {
         return f.name() + "_" + t.name() + "_" + r.name();
     }
+    //metoda
+
+
+
+
 }

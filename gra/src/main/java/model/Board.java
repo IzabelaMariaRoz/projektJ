@@ -41,6 +41,21 @@ public class Board {
      * Zwraca listę wszystkich statków na tej planszy, które są jeszcze zakryte.
      * Potrzebne dla umiejętności RADAR_SCAN.
      */
+    public List<ShipCard> getShipsOnBoard() {
+        List<ShipCard> ships = new ArrayList<>();
+        for (int row = 0; row < 6; row++) {
+            for (int col = 0; col < 6; col++) {
+                ShipCard card = grid[row][col];
+                if (card != null) {
+                    ships.add(card);
+                }
+            }
+        }
+        return ships;
+    }
+    /**
+     * Zwraca listę zakrytych statków (używane przez umiejętność RADAR_SCAN).
+     */
     public List<ShipCard> getHiddenShips() {
         List<ShipCard> hidden = new ArrayList<>();
         for (int row = 0; row < 6; row++) {
@@ -53,4 +68,7 @@ public class Board {
         }
         return hidden;
     }
+
+
+
 }
